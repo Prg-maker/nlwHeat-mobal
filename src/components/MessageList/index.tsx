@@ -26,7 +26,7 @@ export function MessageList(){
           [
             messageQueue[0],
             prevState[0],
-            prevState[2]
+            prevState[1]
           ])
 
           messageQueue.shift()
