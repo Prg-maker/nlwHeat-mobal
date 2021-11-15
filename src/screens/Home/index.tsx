@@ -6,16 +6,20 @@ import {styles} from './styles'
 import {Header} from '../../components/Header'
 import { MessageList } from '../../components/MessageList';
 import { SingBox } from '../../components/SingBox';
+import { SendMessageForm } from '../../components/SendMessageForm';
+import { useAuth } from '../../hooks/auth';
 
 
 
 export function Home() {
+  const {user} = useAuth()
+
   return(
     <View style={styles.container}>
-
+      
       <Header/>
       <MessageList/>
-      <SingBox/>
+      {user ? <SendMessageForm/> : <SingBox/>}
     </View>
   )
 }
